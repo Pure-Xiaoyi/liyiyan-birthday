@@ -3,128 +3,156 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#FFF7EA">
+  <meta name="theme-color" content="#111820">
   <title>给李利燕的一封生日信</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="app-shell">
-    <main class="phone-frame" id="phonePaper" aria-live="polite">
-      <button class="back-button" id="backButton" type="button" aria-label="返回上一页">
-        <span aria-hidden="true">‹</span>
+    <main class="letter-frame" id="letterFrame" data-scene="0" aria-live="polite">
+      <button class="back-control" id="backButton" type="button" aria-label="返回上一页">
+        <span class="control-icon back-icon" aria-hidden="true"></span>
+        <span class="control-label">返回</span>
       </button>
 
-      <section class="page opening is-active" data-page="0" aria-label="开场信封">
-        <div class="opening-stage">
-          <div class="envelope-wrap">
-            <img class="asset-image envelope-img" src="./assets/envelope_lly_custom.png" alt="竖式信封">
-          </div>
-          <div class="cake-row">
-            <button class="cake-button" id="openButton" type="button" aria-label="打开信">
-              <img src="./assets/cake_button_trans.png" alt="打开信封">
-            </button>
-            <div class="cake-hint">
-              <span class="hand" aria-hidden="true">☝</span>
-              <span>点这里！点这里！</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="page first-page" data-page="1" aria-label="元气开场">
-        <p class="editorial-top">生日快乐 · 毕业快乐</p>
-        <div class="hero-copy">
-          <h1>爷怎么会忘记今天呢</h1>
-        </div>
-        <button class="image-button swallow-button" type="button" data-next="2" aria-label="向更高处飞翔吧">
-          <img class="asset-image" src="./assets/swallow_trans.png" alt="燕子">
-          <span class="caption">向更高处飞翔吧</span>
+      <section class="editorial-page cover-page is-active" data-page="0" aria-label="开场信封">
+        <img class="cover-reference-art" src="./assets/design-references/01-midnight-letter.png" alt="深蓝夜色里带月牙与金色火漆印的生日信封">
+        <div class="cover-shade" aria-hidden="true"></div>
+        <header class="cover-heading">
+          <p>生日快乐 · 毕业快乐</p>
+          <h1>给李利燕的<br>一封生日信</h1>
+        </header>
+        <button class="open-letter" id="openButton" type="button" aria-label="打开信">
+          <span class="sr-only">轻触启封，点这里！点这里！</span>
         </button>
       </section>
 
-      <section class="page color-page" data-page="2" aria-label="更丰富的色彩">
-        <article class="letter-copy color-copy">
+      <section class="editorial-page memory-page" data-page="1" aria-label="元气开场">
+        <img class="memory-background" src="./assets/memory-watercolor-paper-v3.png" alt="米白宣纸上的蓝灰、朱砂与金色水墨">
+        <div class="page-paper" aria-hidden="true"></div>
+        <header class="editorial-header">
+          <p class="chapter-note">生日快乐 · 毕业快乐</p>
+        </header>
+        <div class="memory-copy">
+          <h2>爷怎么会忘记今天呢</h2>
+        </div>
+        <button class="swallow-action" id="swallowAction" type="button" aria-label="向更高处飞翔吧">
+          <img src="./assets/swallow_trans.png" alt="燕子">
+          <span>向更高处飞翔吧</span>
+        </button>
+      </section>
+
+      <section class="editorial-page color-page" data-page="2" aria-label="更丰富的色彩">
+        <img class="color-art" src="./assets/color-bloom-paper.png" alt="矿物色彩在纸张上逐渐绽放">
+        <div class="color-manifesto">
           <h2>亲爱的你，准备好去看更丰富的色彩了吗。</h2>
-          <p>我常常在想，<br>如果全世界的人都像你一样就好了。</p>
-          <p>继续往前走吧，<br>别在意别人的目光是否落在你身上。</p>
-          <p>我甚至希望你去当那个坏人，<br>如果你不忍心，<br>那就对自己好一点吧。</p>
-          <p>亲爱的你，<br>准备好去绽放你的色彩了吗。</p>
-        </article>
-        <button class="image-button rainbow-button" type="button" data-next="3" aria-label="继续看色彩">
-          <img class="asset-image" src="./assets/rainbow_trans.png" alt="温柔彩虹">
-        </button>
-      </section>
-
-      <section class="page trust-page" data-page="3" aria-label="谢谢你信任我">
-        <article class="letter-copy trust-copy">
-          <h2>谢谢你信任我</h2>
-          <p>有些话，你曾经很轻地告诉过我。</p>
-          <p>我知道，那不是随便会说给谁听的话。</p>
-          <p>更多时候，你似乎更愿意自己咀嚼。</p>
-          <p>你知道你是一个人，你不知道你是一个人。</p>
-          <p>我感谢你的信任，也愿意和你分担。</p>
-        </article>
-        <div class="people-stage" id="peopleStage" aria-label="拖动女孩向前一点点">
-          <img class="asset-image boy-image" src="./assets/boy_wave_trans.png" alt="男孩微笑挥手">
-          <button class="girl-drag" id="girlDrag" type="button" aria-label="向前一点点">
-            <img class="asset-image" src="./assets/girl_idle_trans.png" alt="女孩">
-            <span>向前一点点</span>
+          <div class="manifesto-body">
+            <p>我常常在想，<br>如果全世界的人都像你一样就好了。</p>
+            <p>继续往前走吧，<br>别在意别人的目光是否落在你身上。</p>
+            <p>我甚至希望你去当那个坏人，<br>如果你不忍心，<br><strong>那就对自己好一点吧。</strong></p>
+          </div>
+          <p class="color-final-invite">亲爱的，准备好去绽放你的色彩了吗。</p>
+          <button class="rainbow-action" id="colorAction" type="button" aria-label="触碰彩虹，绽放你的色彩">
+            <span class="rainbow-glow-stack" aria-hidden="true">
+              <span class="rainbow-glow rainbow-glow-ambient"></span>
+              <span class="rainbow-glow rainbow-glow-prism"></span>
+              <span class="rainbow-glow rainbow-glow-core"></span>
+            </span>
+            <img src="./assets/rainbow_trans.png" alt="水彩彩虹">
+            <span class="sr-only">亲爱的你，准备好去绽放你的色彩了吗。</span>
           </button>
-          <img class="asset-image bump-image" id="bumpImage" src="./assets/fist_bump_trans.png" alt="两个人轻轻碰拳">
         </div>
       </section>
 
-      <section class="page wish-page" data-page="4" aria-label="祝你">
-        <h2 class="wish-heading">祝你</h2>
-        <div class="wish-smile" aria-label="祝福词温柔散落">
-          <span style="--x:-88px;--y:-88px;--r:-4deg">开心</span>
-          <span style="--x:4px;--y:-98px;--r:2deg">健康</span>
-          <span style="--x:92px;--y:-82px;--r:4deg">平安</span>
-          <span style="--x:-26px;--y:-58px;--r:-2deg">顺遂</span>
-          <span style="--x:-118px;--y:-22px;--r:3deg">无忧</span>
-          <span style="--x:78px;--y:-34px;--r:-3deg">无虑</span>
-          <span style="--x:-30px;--y:-18px;--r:1deg">称心</span>
-          <span style="--x:118px;--y:-4px;--r:-2deg">如意</span>
-          <span style="--x:-92px;--y:16px;--r:-2deg">温暖</span>
-          <span style="--x:22px;--y:22px;--r:2deg">明亮</span>
-          <span style="--x:112px;--y:40px;--r:4deg">喜乐</span>
-          <span style="--x:-126px;--y:58px;--r:-3deg">安宁</span>
-          <span style="--x:-36px;--y:66px;--r:2deg">好运</span>
-          <span style="--x:58px;--y:78px;--r:-2deg">吉祥</span>
-          <span style="--x:-112px;--y:104px;--r:3deg">自由</span>
-          <span style="--x:0px;--y:106px;--r:-1deg">好梦</span>
-          <span style="--x:110px;--y:112px;--r:-3deg">心安</span>
-          <span style="--x:-62px;--y:136px;--r:-2deg">温柔</span>
-          <span style="--x:40px;--y:148px;--r:2deg">坚强</span>
-          <span style="--x:-126px;--y:166px;--r:3deg">幸运</span>
-          <span style="--x:-18px;--y:184px;--r:-1deg">圆满</span>
-          <span style="--x:92px;--y:174px;--r:-3deg">向阳</span>
-          <span style="--x:22px;--y:210px;--r:2deg">生长</span>
+      <section class="editorial-page trust-page" data-page="3" aria-label="谢谢你信任我">
+        <img class="trust-background" src="./assets/trust-watercolor-paper-v2.png" alt="为文案和人物留白的温柔水彩纸">
+        <div class="page-paper" aria-hidden="true"></div>
+        <div class="trust-layout">
+          <header class="trust-heading">
+            <h2>谢谢你信任我</h2>
+          </header>
+          <div class="trust-body">
+            <p>有些话，你曾经很轻地告诉过我。</p>
+            <p>我知道，那不是随便会说给谁听的话。</p>
+            <p>更多时候，你似乎更愿意自己咀嚼。</p>
+            <p class="paradox">你知道你是一个人，你不知道你是一个人。</p>
+            <p>我感谢你的信任，也愿意和你分担。</p>
+          </div>
         </div>
-        <button class="image-button qgirl-button" type="button" data-next="5" aria-label="进入最后一页">
-          <img class="asset-image" src="./assets/q_girl_v_trans.png" alt="马尾少女比耶">
-        </button>
+        <div class="relationship-scene" id="relationshipScene" aria-label="拖动女孩向男孩靠近">
+          <div class="gaze-stage">
+            <img class="boy-gaze" src="./assets/boy_wave_trans.png" alt="男孩微笑挥手">
+            <button class="girl-drag" id="girlDrag" type="button" aria-label="向前一点点">
+              <img src="./assets/girl_idle_trans.png" alt="女孩安静地看向男孩">
+            </button>
+          </div>
+          <span class="relationship-hint">向前一点点</span>
+          <div class="fist-bump-stage" aria-hidden="true">
+            <img src="./assets/fist_bump_trans.png" alt="两个人轻轻碰拳">
+          </div>
+        </div>
       </section>
 
-      <section class="page final-page" data-page="5" aria-label="生日快乐收束">
-        <div class="final-copy">
-          <p>最后</p>
-          <p>再次祝你</p>
+      <section class="editorial-page blessing-page" data-page="4" aria-label="祝你">
+        <img class="blessing-reference-art" src="./assets/blessing-watercolor-paper-v3.png" alt="杏粉、蓝灰与浅金晕染的米白水彩宣纸">
+        <div class="page-paper" aria-hidden="true"></div>
+        <header class="blessing-heading">
+          <h2>祝你</h2>
+        </header>
+        <div class="blessing-field" id="blessingField" aria-label="祝福词汇聚到女孩身边">
+          <span class="blessing-word" style="--x:-132px;--y:-210px;--tx:-54px;--ty:-104px">开心</span>
+          <span class="blessing-word" style="--x:-40px;--y:-226px;--tx:-16px;--ty:-112px">健康</span>
+          <span class="blessing-word" style="--x:70px;--y:-216px;--tx:34px;--ty:-106px">平安</span>
+          <span class="blessing-word" style="--x:128px;--y:-174px;--tx:66px;--ty:-84px">顺遂</span>
+          <span class="blessing-word" style="--x:-142px;--y:-150px;--tx:-72px;--ty:-70px">无忧</span>
+          <span class="blessing-word" style="--x:140px;--y:-120px;--tx:70px;--ty:-56px">无虑</span>
+          <span class="blessing-word" style="--x:-118px;--y:-84px;--tx:-64px;--ty:-40px">称心</span>
+          <span class="blessing-word" style="--x:126px;--y:-58px;--tx:66px;--ty:-28px">如意</span>
+          <span class="blessing-word" style="--x:-142px;--y:-18px;--tx:-76px;--ty:-8px">温暖</span>
+          <span class="blessing-word" style="--x:136px;--y:12px;--tx:72px;--ty:8px">明亮</span>
+          <span class="blessing-word" style="--x:-124px;--y:54px;--tx:-66px;--ty:28px">喜乐</span>
+          <span class="blessing-word" style="--x:128px;--y:74px;--tx:68px;--ty:38px">安宁</span>
+          <span class="blessing-word" style="--x:-136px;--y:114px;--tx:-72px;--ty:56px">好运</span>
+          <span class="blessing-word" style="--x:138px;--y:132px;--tx:72px;--ty:66px">吉祥</span>
+          <span class="blessing-word" style="--x:-104px;--y:170px;--tx:-58px;--ty:82px">自由</span>
+          <span class="blessing-word" style="--x:112px;--y:188px;--tx:58px;--ty:90px">好梦</span>
+          <span class="blessing-word" style="--x:-46px;--y:214px;--tx:-28px;--ty:102px">心安</span>
+          <span class="blessing-word" style="--x:52px;--y:220px;--tx:28px;--ty:106px">温柔</span>
+          <span class="blessing-word" style="--x:-144px;--y:232px;--tx:-74px;--ty:112px">坚强</span>
+          <span class="blessing-word" style="--x:144px;--y:246px;--tx:74px;--ty:118px">幸运</span>
+          <span class="blessing-word" style="--x:-86px;--y:270px;--tx:-46px;--ty:128px">圆满</span>
+          <span class="blessing-word" style="--x:92px;--y:278px;--tx:48px;--ty:132px">向阳</span>
+          <span class="blessing-word" style="--x:2px;--y:190px;--tx:0px;--ty:80px">生长</span>
+          <button class="qgirl-receiver" id="qgirlReceiver" type="button" aria-label="接住祝福并进入最后一页">
+            <img src="./assets/q_girl_v_trans.png" alt="马尾少女比耶">
+          </button>
+        </div>
+      </section>
+
+      <section class="editorial-page final-page" data-page="5" aria-label="生日快乐收束">
+        <img class="finale-background finale-night-background" src="./assets/finale-midnight-garden-v2.png" alt="深蓝夜色与暗金植物">
+        <img class="finale-background finale-lotus-background" src="./assets/finale-lotus-v4.png" alt="晨雾中的水墨荷花">
+        <div class="finale-stage">
+          <p class="final-overline">最后</p>
+          <p class="final-prelude">再次祝你</p>
           <h2>生日<span>快乐</span></h2>
+          <button class="finale-trigger" id="finaleTrigger" type="button" aria-label="点燃仙女棒">
+            <img src="./assets/sparkler_trans.png" alt="金色仙女棒">
+          </button>
+          <canvas class="finale-canvas" id="finaleCanvas" aria-hidden="true"></canvas>
+          <p class="final-message">祝李利燕生日快乐！</p>
         </div>
-        <button class="image-button sparkler-button" id="sparklerButton" type="button" aria-label="点亮仙女棒">
-          <img class="asset-image" src="./assets/sparkler_trans.png" alt="仙女棒">
-        </button>
-        <canvas class="final-sparks" id="finalSparks" aria-hidden="true"></canvas>
-        <p class="final-whisper">祝李利燕生日快乐！</p>
       </section>
     </main>
   </div>
 
-  <button class="music-toggle" id="musicToggle" type="button" aria-label="音乐开关" aria-pressed="false">
-    <span></span>
+  <button class="music-control" id="musicToggle" type="button" aria-label="音乐开关" aria-pressed="false">
+    <span class="control-icon music-icon" aria-hidden="true"></span>
+    <span class="control-label">音乐</span>
   </button>
-  <audio id="bgm" src="./assets/in-the-pool.mp3" preload="auto" autoplay loop></audio>
+  <audio id="bgm" src="./assets/in-the-pool.mp3" preload="auto" loop autoplay></audio>
+  <script src="./assets/vendor/gsap.min.js"></script>
+  <script src="./interaction-geometry.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
