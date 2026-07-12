@@ -1812,10 +1812,6 @@ body[data-scene="5"] .music-control.is-unavailable {
   }
 }
 
-.blessing-page .blessing-reference-art {
-  content: url("./assets/blessing-film-clean-v2.png");
-}
-
 .final-page {
   background: #050b14;
 }
